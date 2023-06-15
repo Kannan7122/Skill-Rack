@@ -1,0 +1,42 @@
+Program :
+
+
+A string S is passed as the input. The program must reverse the order of the words in the string
+and print them as the output.
+Input Format:
+The first line will contain S.
+Output Format:
+The first line will contain the words in the string S in the reverse order.
+Boundary Conditions:
+Length of S is from 5 to 100.
+Example Input/Output 1:
+Input:
+Today is Friday
+Output:
+Friday is Today
+Example Input/Output 2:
+Input:
+five six ten eleven
+Output:
+eleven ten six five
+
+
+
+
+
+Code :
+
+import java.util.*;
+public class Hello {
+
+    public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		String str=sc.nextLine();
+		String[] arr=str.split(" ");
+		int n=arr.length;
+		for(int i=n-1;i>=0;i--)
+		{
+		    System.out.print(arr[i]+" ");
+		}
+	}
+}
