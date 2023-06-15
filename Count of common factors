@@ -1,0 +1,89 @@
+Program :
+
+
+Given a set of numbers where all other numbers are multiple of the smallest number, the program
+must find the count of the common factors C excluding 1.
+Input Format:
+First line will contain the integer value N representing how many numbers are passed as input.
+Next N lines will have the numbers.
+Output Format:
+First line will contain the count of common factors C.
+Constraints:
+N will be from 2 to 20.
+Sample Input/Output:
+Example 1:
+Input:
+2
+100
+75
+Output:
+2
+Explanation:
+The common factors excluding 1 are 5,25. Hence output is 2
+Example 2:
+Input:
+3
+10
+20
+30
+Output:
+3
+Explanation:
+The common factors excluding 1 are 2,5,10. Hence output is 3.
+
+
+
+
+
+
+
+Code :
+
+import java.util.*;
+public class Hello {
+
+    public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		int n=sc.nextInt();
+		int arr[]=new int[n];
+		for(int i=0;i<n;i++)
+		{
+		    arr[i]=sc.nextInt();
+		}
+		int[] res=new int[1000000];
+		int g=0;
+		for(int i=0;i<n;i++)
+		{
+		    for(int j=2;j<=arr[i];j++)
+		    {
+		        if(arr[i]%j==0)
+		        {
+		            res[g]=j;
+		            g++;
+		        }
+		    }
+		}
+		
+		int cnt=0;
+		for(int i=0;i<g;i++)
+		{
+		    int c=1;
+		    if(res[i]==-1)
+		        continue;
+		    for(int j=i+1;j<g;j++)
+		    {
+		        if(res[i]==res[j])
+		        {
+		            c++;
+		            res[j]=-1;
+		        }
+		    }
+		    if(c==n)
+		    {
+		        cnt++;
+		    }
+		}
+		System.out.println(cnt);
+
+	}
+}
