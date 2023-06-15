@@ -1,0 +1,42 @@
+Program :
+
+
+An odd length string S is passed as the input. The middle three letters of S must be printed as the
+output.
+Input Format:
+First line will contain the string value S
+Output Format:
+First line will contain the middle three letters of S.
+Boundary Conditions:
+Length of S is from 5 to 100
+Example Input/Output 1:
+Input:
+level
+Output:
+eve
+Example Input/Output 2:
+Input:
+manager
+Output:
+nag
+
+
+
+
+Code :
+
+import java.util.*;
+public class Hello {
+
+    public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		String str=sc.next();
+		int n=str.length();
+		int x=n-3;
+		int a=x/2;
+		for(int i=a;i<n-a;i++)
+		{
+		    System.out.print(str.charAt(i));
+		}
+	}
+}
